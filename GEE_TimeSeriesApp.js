@@ -2,11 +2,10 @@ var aoi = ee.Geometry.Polygon([[[113.800, 22.570],[113.800, 22.120],[114.514, 22
 
 var Chla = ee.ImageCollection('users/khoyinivan/S2_Chla');
 var vis = {palette: ['#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#d7191c'],
-    min: 0.3, max: 13.0};
+    min: 0.2, max: 30.0};
 
 var SS = ee.ImageCollection('users/khoyinivan/S2_SS');
 var Tur = ee.ImageCollection('users/khoyinivan/S2_Tur');
-var DO = ee.ImageCollection('users/khoyinivan/S2_DO');
 
 var utils = require('users/gena/packages:utils');
 var text = require('users/gena/packages:text');
@@ -20,7 +19,7 @@ var Chla_video =  Chla.map(function(image){
   return image.visualize({
     forceRgbOutput: true,
     palette: ['#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#d7191c'],
-    min: 0.3, max: 13.0
+    min: 0.2, max: 30.0
   }).set({label: label});
 });
 
@@ -70,7 +69,7 @@ inspectorPanel.add(ui.Label('[Legend]'));
 inspectorPanel.add(ui.Label('Click a location to see its time series of other indicators.'));
 inspectorPanel.add(ui.Label('[Chart-SS]'));
 inspectorPanel.add(ui.Label('[Chart-TUR]'));
-inspectorPanel.add(ui.Label('[Chart-DO]'));
+// inspectorPanel.add(ui.Label('[Chart-DO]'));
 
 
 /*
@@ -91,12 +90,12 @@ var generateChart = function (coords) {
 
   // Make a chart from the time series.
   var sstChart = ui.Chart.image.series(Chla, point, ee.Reducer.mean(), 50);
-
+  
   // Customize the chart.
   sstChart.setOptions({
     title: 'Chlorophyll-a: time series',
     titleTextStyle: {fontSize: 16},
-    vAxis: {title: 'Chlorophyll-a (μg/L)', scaleType: 'log'},
+    vAxis: {title: 'Chlorophyll-a (μg/L)', viewWindow: { min: 0, max: 30 }},
     hAxis: {title: 'Date', format: 'MM-yyyy', gridlines: {count: 7}},
     pointSize: 5,
     legend: {position: 'none'}
@@ -164,7 +163,7 @@ var generateChart_SS = function (coords) {
   sstChart.setOptions({
     title: 'Suspended Solids: time series',
     titleTextStyle: {fontSize: 16},
-    vAxis: {title: 'Suspended Solids (mg/L)', scaleType: 'log'},
+    vAxis: {title: 'Suspended Solids (mg/L)', viewWindow: { min: 0, max: 30 }},
     hAxis: {title: 'Date', format: 'MM-yyyy', gridlines: {count: 7}},
     pointSize: 5,
     legend: {position: 'none'}
@@ -187,36 +186,13 @@ var generateChart_TUR = function (coords) {
   sstChart.setOptions({
     title: 'Turbidity: time series',
     titleTextStyle: {fontSize: 16},
-    vAxis: {title: 'Turbidity (NTU)', scaleType: 'log'},
+    vAxis: {title: 'Turbidity (NTU)', viewWindow: { min: 0, max: 25 }},
     hAxis: {title: 'Date', format: 'MM-yyyy', gridlines: {count: 7}},
     pointSize: 5,
     legend: {position: 'none'}
   });
   // Add the chart at a fixed position, so that new charts overwrite older ones.
   inspectorPanel.widgets().set(6, sstChart);
-};
-
-
-// Generates a new time series chart of SST for the given coordinates.
-var generateChart_DO = function (coords) {
-
-  // Add a dot for the point clicked on.
-  var point = ee.Geometry.Point(coords.lon, coords.lat);
-
-  // Make a chart from the time series.
-  var sstChart = ui.Chart.image.series(DO, point, ee.Reducer.mean(), 50);
-
-  // Customize the chart.
-  sstChart.setOptions({
-    title: 'Dissolved Oxygen: time series',
-    titleTextStyle: {fontSize: 16},
-    vAxis: {title: 'Dissolved Oxygen (mg/L)', scaleType: 'log'},
-    hAxis: {title: 'Date', format: 'MM-yyyy', gridlines: {count: 7}},
-    pointSize: 5,
-    legend: {position: 'none'}
-  });
-  // Add the chart at a fixed position, so that new charts overwrite older ones.
-  inspectorPanel.widgets().set(7, sstChart);
 };
 
 
@@ -227,14 +203,14 @@ var generateChart_DO = function (coords) {
 
 // Create a panel that contains both the slider and the label.
 var uilabel = ui.Label('Chlorophyll-a time series (1=earliest)');
-var DateSlider = ui.Slider({min: 1, max: 57, step: 1,
-  style: {stretch: 'horizontal', width:'500px' },
+var DateSlider = ui.Slider({min: 1, max: 120, step: 1,
+  style: {stretch: 'horizontal', width:'500px', fontWeight: 'bold'},
   onChange: (function(value) {
     mapPanel.layers().reset();
     mapPanel.layers().add(ee.Image(Chla_list.get(value - 1)), 'Chl-a');
   })
 });
-DateSlider.setValue(1);  // Set a default value.
+DateSlider.setValue(120);  // Set a default value.
 mapPanel.layers().add(ee.Image(Chla_list.get(0)), 'Chl-a');
 
 var uipanel = ui.Panel({
@@ -250,14 +226,14 @@ mapPanel.add(uipanel);
 mapPanel.onClick(generateChart);
 mapPanel.onClick(generateChart_SS);
 mapPanel.onClick(generateChart_TUR);
-mapPanel.onClick(generateChart_DO);
+// mapPanel.onClick(generateChart_DO);
 
 
 // Configure the map.
 mapPanel.style().set('cursor', 'crosshair');
 
 // Initialize with a test point.
-var initialPoint = ee.Geometry.Point(114.20, 22.30);
+var initialPoint = ee.Geometry.Point(114.08, 22.32);
 mapPanel.centerObject(aoi, 11);
 
 /*
@@ -277,10 +253,6 @@ generateChart_SS({
   lat: initialPoint.coordinates().get(1).getInfo()
 });
 generateChart_TUR({
-  lon: initialPoint.coordinates().get(0).getInfo(),
-  lat: initialPoint.coordinates().get(1).getInfo()
-});
-generateChart_DO({
   lon: initialPoint.coordinates().get(0).getInfo(),
   lat: initialPoint.coordinates().get(1).getInfo()
 });
