@@ -24,3 +24,5 @@ Link to the article: https://www.frontiersin.org/articles/10.3389/fmars.2022.871
 *   Part2_ModelDevelopmentAndPrediction.ipynb
 
 ![khoyinivan users earthengine app_view_marine-water-quality-hk_Apr2022](https://user-images.githubusercontent.com/68047356/161700888-ca8e0ee7-b962-48e5-96da-e224ada1982a.png)
+
+*Last updated in May 2022*
