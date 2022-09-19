@@ -25,4 +25,10 @@ Link to the article: https://www.frontiersin.org/articles/10.3389/fmars.2022.871
 
 ![khoyinivan users earthengine app_view_marine-water-quality-hk_Apr2022](https://user-images.githubusercontent.com/68047356/161700888-ca8e0ee7-b962-48e5-96da-e224ada1982a.png)
 
-*Last updated in May 2022*
+Other files:
+
+*   **MarineQuality_2015-2020.csv**: Marine Water Quality data measured at different Marine Water Quality Monitoring stations in Hong Kong from 2015 to 2020; Gathered from DATA.GOV.HK (https://data.gov.hk/en-data/dataset/hk-epd-marineteam-marine-water-quality-historical-data-en)
+
+*   **MonitoringStation_wgs84_76_shp.zip**: Locations of the 76 water quality monitoring stations in the open waters of Hong Kong (ESRI shapefile format); Equivalent to the Feature Collection ("users/khoyinivan/MonitoringStation_wgs84_76") in GEE; Extracted from Appendix A of the Annual Marine Water Quality Reports (https://www.epd.gov.hk/epd/english/environmentinhk/water/hkwqrc/waterquality/marine-2.html)
+
+*Last updated in September 2022*
