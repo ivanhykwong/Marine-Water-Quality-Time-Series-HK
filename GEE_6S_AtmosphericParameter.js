@@ -41,11 +41,16 @@ function water(geom,date){
   // filtered water collection
   var water_ic = ee.ImageCollection('NCEP_RE/surface_wv').filterDate(H2O_date, H2O_date.advance(1,'month'));
   // water image
-  var water_img = ee.Image(water_ic.first());
-  // water_vapour at target
-  var water_target = water_img.reduceRegion({reducer:ee.Reducer.mean(), geometry:centroid}).get('pr_wtr');
-  // convert to Py6S units (Google = kg/m^2, Py6S = g/cm^2)
-  var water_Py6S_units = ee.Number(water_target).divide(10);
+  var water_Py6S_units;
+  if (water_ic.size().getInfo() === 0) {
+    water_Py6S_units = 'Out of scope';
+  } else {
+    var water_img = ee.Image(water_ic.first());
+    // water_vapour at target
+    var water_target = water_img.reduceRegion({reducer:ee.Reducer.mean(), geometry:centroid}).get('pr_wtr');
+    // convert to Py6S units (Google = kg/m^2, Py6S = g/cm^2)
+    water_Py6S_units = ee.Number(water_target).divide(10);
+  }
   return water_Py6S_units;
 }  
   
@@ -188,7 +193,7 @@ function compute(){
   Lon_display.setValue('Lon: ' + Lon.getInfo());
   Lat_display.setValue('Lat: ' + Lat.getInfo());
   Date_display.setValue('Date: ' + Date.getInfo());
-  H2O_display.setValue('Water Vapour (g/cm^2): ' + H2O.getInfo());
+  H2O_display.setValue('Water Vapour (g/cm^2): ' + ee.String(H2O).getInfo());
   O3_display.setValue('Ozone (cm-atm): ' + O3.getInfo());
   AOT_display.setValue('Aerosol Optical Thickness: ' + AOT.getInfo());
   mapPanel.centerObject(geom,11);
