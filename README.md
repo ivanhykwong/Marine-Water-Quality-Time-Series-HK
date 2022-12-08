@@ -36,4 +36,4 @@ Other files:
 
 *   **MonitoringStation_wgs84_76_shp.zip**: Locations of the 76 water quality monitoring stations in the open waters of Hong Kong (ESRI shapefile format); Equivalent to the Feature Collection ("users/khoyinivan/MonitoringStation_wgs84_76") in GEE; Extracted from Appendix A of the Annual Marine Water Quality Reports (https://www.epd.gov.hk/epd/english/environmentinhk/water/hkwqrc/waterquality/marine-2.html)
 
-*Last updated in September 2022*
+*Last updated in December 2022*
