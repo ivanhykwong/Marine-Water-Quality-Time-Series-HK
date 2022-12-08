@@ -17,6 +17,11 @@ Link to the article: https://www.frontiersin.org/articles/10.3389/fmars.2022.871
 
 ---
 
+**Additional tool to obtain the parameters related to atmospheric constituents required for 6S atmospheric correction, including Water Vapour, Ozone and Aerosol Optical Thickness:** https://khoyinivan.users.earthengine.app/view/atmospheric-constituents-for-6s
+*   Source code of the web application: GEE_6S_AtmosphericParameter.js
+
+---
+
 **Analysis codes:**
 
 *   Part1_ImagePreprocessing.ipynb
