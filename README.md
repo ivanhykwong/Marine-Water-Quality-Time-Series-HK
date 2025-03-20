@@ -36,7 +36,7 @@ Award-winning ArcGIS Dashboard:
 
 *   Part2_ModelDevelopmentAndPrediction.ipynb
 
-**Analysis codes:** (Python processing in local pc; used to produce the results in the ArcGIS Dashboard)
+**Analysis codes:** (Python processing in local PC; used to produce the results in the ArcGIS Dashboard)
 
 *   LocalProcessingPipeline_Part1_ArchivedImageDatabase.ipynb
 
