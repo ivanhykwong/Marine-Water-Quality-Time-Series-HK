@@ -10,10 +10,10 @@ Link to the article: https://www.frontiersin.org/articles/10.3389/fmars.2022.871
 
 Award-winning ArcGIS Dashboard:
 
-**Water Quality Monitoring From Satellite Imagery: A Case Study in Hong Kong. *Common Spatial Data Infrastructure (CSDI) Awards 2024 - Merit (Open Category).* https://csdigeolab.gov.hk/en/past-events/csdi-awards-2024
+**Water Quality Monitoring From Satellite Imagery: A Case Study in Hong Kong. *Common Spatial Data Infrastructure (CSDI) Awards 2024 - Merit (Open Category).* https://csdigeolab.gov.hk/en/past-events/csdi-awards-2024**
 
-Project presentation slides: https://csdigeolab.gov.hk/images/CSDI_Awards_2024/brief/C4-23.pdf
-ArcGIS Dashboard: https://www.arcgis.com/apps/dashboards/3b1a7e3a7ea640a1a2b2338cd774520a
+- Project presentation slides: https://csdigeolab.gov.hk/images/CSDI_Awards_2024/brief/C4-23.pdf
+- ArcGIS Dashboard: https://www.arcgis.com/apps/dashboards/3b1a7e3a7ea640a1a2b2338cd774520a
 
 ---
 
