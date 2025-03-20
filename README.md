@@ -42,10 +42,10 @@ Award-winning ArcGIS Dashboard:
 
 *   LocalProcessingPipeline_Part2_NewlyAcquiredImage.ipynb
 
-GEE application:
+**GEE application:**
 ![khoyinivan users earthengine app_view_marine-water-quality-hk_Apr2022](https://user-images.githubusercontent.com/68047356/161700888-ca8e0ee7-b962-48e5-96da-e224ada1982a.png)
 
-ArcGIS Dashboard:
+**ArcGIS Dashboard:**
 ![DashboardScreenshot](https://github.com/user-attachments/assets/04ee70e7-fe94-4495-9bad-4e19b949967f)
 
 Other files:
