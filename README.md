@@ -6,7 +6,7 @@ Journal article:
 
 **Kwong, I. H. Y., Wong, F. K. K., & Fung, T. (2022). Automatic mapping and monitoring of marine water quality parameters in Hong Kong using Sentinel-2 image time-series and Google Earth Engine cloud computing. *Frontiers in Marine Science, 9*, 871470. doi: 10.3389/fmars.2022.871470**
 
-Link to the article: https://www.frontiersin.org/articles/10.3389/fmars.2022.871470/
+- Link to the article: https://www.frontiersin.org/articles/10.3389/fmars.2022.871470/
 
 Award-winning ArcGIS Dashboard:
 
@@ -14,6 +14,7 @@ Award-winning ArcGIS Dashboard:
 
 - Project presentation slides: https://csdigeolab.gov.hk/images/CSDI_Awards_2024/brief/C4-23.pdf
 - ArcGIS Dashboard: https://www.arcgis.com/apps/dashboards/3b1a7e3a7ea640a1a2b2338cd774520a
+- Video introduction: https://youtu.be/ghYus8dmrP0 (English) / https://youtu.be/mNEPP1INqXE (Cantonese)
 
 ---
 
