@@ -52,6 +52,8 @@ Other files:
 
 *   **MarineQuality_2015-2020.csv**: Marine Water Quality data measured at different Marine Water Quality Monitoring stations in Hong Kong from 2015 to 2020; Gathered from DATA.GOV.HK (https://data.gov.hk/en-data/dataset/hk-epd-marineteam-marine-water-quality-historical-data-en)
 
-*   **MonitoringStation_wgs84_76_shp.zip**: Locations of the 76 water quality monitoring stations in the open waters of Hong Kong (ESRI shapefile format); Equivalent to the Feature Collection ("users/khoyinivan/MonitoringStation_wgs84_76") in GEE; Extracted from Appendix A of the Annual Marine Water Quality Reports (https://www.epd.gov.hk/epd/english/environmentinhk/water/hkwqrc/waterquality/marine-2.html)
+*   **MonitoringStation_wgs84_76_shp.zip**: Locations of the 76 water quality monitoring stations in the open waters of Hong Kong (ESRI shapefile format); Equivalent to the Feature Collection ("users/khoyinivan/MonitoringStation_wgs84_76") in GEE; Extracted from Appendix A of the Annual Marine Water Quality Report 2019 (https://www.epd.gov.hk/epd/english/environmentinhk/water/hkwqrc/waterquality/marine-2.html)
 
-*Last updated in March 2025*
+*   **WaterControlZone_HK_shp.zip**: Polygons of the water control zones in Hong Kong (ESRI shapefile format); It was manually digitized from Appendix A of the Annual Marine Water Quality Report 2019 (https://www.epd.gov.hk/epd/english/environmentinhk/water/hkwqrc/waterquality/marine-2.html); Only boundaries in the open water were extracted
+
+*Last updated in July 2025*
